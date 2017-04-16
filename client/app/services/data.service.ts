@@ -36,4 +36,27 @@ export class DataService {
     return this.http.delete(`/api/cat/${cat._id}`, this.options);
   }
 
+  getPhotos(): Observable<any> {
+    return this.http.get('/api/photos').map(res => res.json());
+  }
+
+  countPhotos(): Observable<any> {
+    return this.http.get('/api/photos/count').map(res => res.json());
+  }
+
+  addPhoto(photo): Observable<any> {
+    return this.http.post('/api/photo', JSON.stringify(photo), this.options);
+  }
+
+  getPhoto(photo): Observable<any> {
+    return this.http.get(`/api/photo/${photo._id}`, this.options);
+  }
+
+  editPhoto(photo): Observable<any> {
+    return this.http.put(`/api/photo/${photo._id}`, JSON.stringify(photo), this.options);
+  }
+
+  deletePhoto(photo): Observable<any> {
+    return this.http.delete(`/api/photo/${photo._id}`, this.options);
+  }
 }

@@ -6,6 +6,7 @@ import * as path from 'path';
 
 import config from './config/db';
 import Cat from './models/cat.model';
+import Photo from './models/photo.model';
 import setRoutes from './routes';
 
 const app = express();
